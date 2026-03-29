@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chikmagalur Trip — Apr 3–5 | 4 Adults</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --moss: #2C4A1E;
+    --forest: #1B3A10;
+    --sage: #6B8F4E;
+    --mist: #A8C090;
+    --cream: #F5EFE0;
+    --warm: #E8DFC8;
+    --earth: #7A5C3A;
+    --rust: #C4602A;
+    --gold: #C9A84C;
+    --fog: #D4E3C8;
+    --dark: #111A0D;
+    --text: #2A3820;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--forest);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 80%, rgba(107,143,78,0.25) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 20%, rgba(44,74,30,0.4) 0%, transparent 55%),
+      radial-gradient(ellipse at 50% 50%, rgba(27,58,16,0.5) 0%, transparent 70%);
+  }
+
+  .hero-noise {
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  /* floating leaves */
+  .leaf {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.12;
+    animation: drift 8s ease-in-out infinite;
+  }
+  .leaf:nth-child(1) { top: 10%; left: 8%; animation-delay: 0s; font-size: 3rem; }
+  .leaf:nth-child(2) { top: 25%; right: 10%; animation-delay: 2s; }
+  .leaf:nth-child(3) { bottom: 20%; left: 15%; animation-delay: 4s; font-size: 2.5rem; }
+  .leaf:nth-child(4) { bottom: 35%; right: 8%; animation-delay: 1s; }
+  .leaf:nth-child(5) { top: 60%; left: 5%; animation-delay: 3s; }
+
+  @keyframes drift {
+    0%,100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-18px) rotate(5deg); }
+  }
+
+  .hero-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--mist);
+    background: rgba(107,143,78,0.2);
+    border: 1px solid rgba(168,192,144,0.3);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 0.8s ease forwards;
+  }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.8rem, 8vw, 6rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.05;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 0.9s 0.1s ease both;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--mist);
+  }
+
+  .hero-sub {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--fog);
+    margin-top: 1rem;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 1s 0.2s ease both;
+  }
+
+  .hero-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 2.5rem;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 1s 0.3s ease both;
+  }
+
+  .pill {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    padding: 0.5rem 1.1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    backdrop-filter: blur(8px);
+  }
+  .pill span { margin-right: 0.4rem; }
+
+  .hero-budget {
+    margin-top: 3rem;
+    position: relative;
+    z-index: 2;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(168,192,144,0.25);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 1.5rem 2.5rem;
+    animation: fadeUp 1s 0.4s ease both;
+  }
+
+  .budget-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .budget-item .amount {
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--mist);
+  }
+  .budget-item .label {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-top: 0.2rem;
+  }
+  .budget-item.total .amount {
+    color: var(--gold);
+    font-size: 1.9rem;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: rgba(255,255,255,0.4);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .scroll-arrow {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+    animation: scrollPulse 2s ease infinite;
+  }
+  @keyframes scrollPulse {
+    0%,100% { opacity: 0.4; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.2); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTION WRAPPER ── */
+  .section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 600;
+    color: var(--forest);
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-sub {
+    color: var(--sage);
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+  }
+
+  /* ── TRANSPORT ── */
+  .transport-bg {
+    background: var(--forest);
+    position: relative;
+    overflow: hidden;
+  }
+  .transport-bg::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 0% 100%, rgba(107,143,78,0.2) 0%, transparent 60%);
+  }
+  .transport-bg .section-label { color: var(--mist); }
+  .transport-bg .section-title { color: #fff; }
+  .transport-bg .section-sub { color: var(--fog); }
+
+  .transport-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(168,192,144,0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    backdrop-filter: blur(8px);
+  }
+
+  .route-visual {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .city-badge {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+    padding: 0.5rem 1.2rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .route-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to right, rgba(255,255,255,0.2), var(--mist), rgba(255,255,255,0.2));
+    position: relative;
+    min-width: 80px;
+  }
+
+  .route-line::after {
+    content: '🚌';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.4rem;
+    background: var(--forest);
+    padding: 0 0.4rem;
+  }
+
+  .bus-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .bus-stat {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 1rem;
+  }
+  .bus-stat .val {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    color: var(--mist);
+    font-weight: 600;
+  }
+  .bus-stat .key {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.2rem;
+  }
+
+  .tip-box {
+    background: rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    color: var(--gold);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .tip-box strong { display: block; margin-bottom: 0.2rem; font-weight: 600; }
+
+  .local-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .local-opt {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(168,192,144,0.15);
+    border-radius: 12px;
+    padding: 1.25rem;
+  }
+  .local-opt .icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .local-opt h4 { color: #fff; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.3rem; }
+  .local-opt p { color: rgba(255,255,255,0.5); font-size: 0.82rem; line-height: 1.5; }
+  .local-opt .price { color: var(--mist); font-weight: 600; margin-top: 0.4rem; font-size: 0.88rem; }
+
+  /* ── STAY ── */
+  .stay-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .stay-card {
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(27,58,16,0.08);
+    border: 1px solid rgba(107,143,78,0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .stay-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(27,58,16,0.15);
+  }
+
+  .stay-thumb {
+    height: 180px;
+    background: var(--sage);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stay-thumb.a1 { background: linear-gradient(135deg, #3d6b2a, #2c4a1e); }
+  .stay-thumb.a2 { background: linear-gradient(135deg, #4a7a35, #5a6e3a); }
+  .stay-thumb.a3 { background: linear-gradient(135deg, #2a5a3e, #1e4a32); }
+
+  .stay-badge {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: var(--gold);
+    color: var(--forest);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 50px;
+  }
+
+  .stay-body { padding: 1.5rem; }
+  .stay-name {
+    font-family: 'Fraunces', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin-bottom: 0.3rem;
+  }
+  .stay-location {
+    font-size: 0.8rem;
+    color: var(--sage);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .stay-desc { font-size: 0.88rem; color: #666; line-height: 1.6; margin-bottom: 1rem; }
+
+  .stay-meta {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  .stay-tag {
+    background: var(--fog);
+    color: var(--moss);
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+  }
+
+  .stay-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+  .price-big {
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--moss);
+  }
+  .price-note { font-size: 0.78rem; color: #999; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-green {
+    background: var(--moss);
+    color: #fff;
+  }
+  .btn-green:hover { background: var(--forest); }
+  .btn-outline {
+    background: transparent;
+    border: 1.5px solid var(--sage);
+    color: var(--sage);
+  }
+  .btn-outline:hover { background: var(--fog); }
+  .btn-map {
+    background: #E8F5E9;
+    color: var(--moss);
+    border: 1px solid rgba(107,143,78,0.3);
+  }
+  .btn-map:hover { background: var(--fog); }
+
+  .stay-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+  /* ── ITINERARY ── */
+  .itinerary-bg { background: var(--warm); }
+
+  .day-block { margin-bottom: 3rem; }
+  .day-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .day-num {
+    font-family: 'Fraunces', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--mist);
+    line-height: 1;
+    min-width: 50px;
+  }
+  .day-info h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    color: var(--forest);
+  }
+  .day-info p { font-size: 0.85rem; color: var(--sage); margin-top: 0.2rem; }
+
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.4rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--sage), var(--mist), transparent);
+    border-radius: 2px;
+  }
+
+  .tl-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -1.62rem;
+    top: 0.9rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--sage);
+    border: 2px solid var(--cream);
+    box-shadow: 0 0 0 2px var(--sage);
+  }
+
+  .tl-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 2px 12px rgba(27,58,16,0.06);
+    border: 1px solid rgba(107,143,78,0.12);
+  }
+
+  .tl-time {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 0.25rem;
+  }
+
+  .tl-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin-bottom: 0.35rem;
+  }
+
+  .tl-desc { font-size: 0.85rem; color: #666; line-height: 1.6; margin-bottom: 0.75rem; }
+
+  .tl-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .cost-tag {
+    background: #FFF3E0;
+    color: var(--rust);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+  }
+
+  .veg-tag {
+    background: #E8F5E9;
+    color: var(--moss);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+  }
+
+  .map-link {
+    font-size: 0.8rem;
+    color: var(--sage);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .map-link:hover { color: var(--moss); }
+
+  /* alternatives */
+  .alt-box {
+    background: rgba(107,143,78,0.08);
+    border: 1px dashed rgba(107,143,78,0.3);
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+    margin-top: 0.75rem;
+  }
+  .alt-box .alt-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--sage);
+    margin-bottom: 0.4rem;
+  }
+  .alt-box ul { padding-left: 1.1rem; }
+  .alt-box li { font-size: 0.82rem; color: #666; margin-bottom: 0.2rem; line-height: 1.5; }
+  .alt-box a { color: var(--sage); text-decoration: none; }
+  .alt-box a:hover { color: var(--moss); text-decoration: underline; }
+
+  /* ── FOOD ── */
+  .food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .food-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 1.5rem;
+    border: 1px solid rgba(107,143,78,0.12);
+    box-shadow: 0 2px 12px rgba(27,58,16,0.06);
+    transition: transform 0.2s;
+  }
+  .food-card:hover { transform: translateY(-3px); }
+
+  .food-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+
+  .food-icon { font-size: 2rem; }
+  .food-badges { display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: flex-end; }
+  .badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.18rem 0.5rem;
+    border-radius: 50px;
+  }
+  .badge-veg { background: #E8F5E9; color: #2E7D32; }
+  .badge-nonveg { background: #FBE9E7; color: #BF360C; }
+  .badge-both { background: #F3E5F5; color: #6A1B9A; }
+  .badge-cafe { background: #E3F2FD; color: #1565C0; }
+
+  .food-name {
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin-bottom: 0.2rem;
+  }
+  .food-type { font-size: 0.78rem; color: var(--sage); margin-bottom: 0.5rem; }
+  .food-desc { font-size: 0.84rem; color: #666; line-height: 1.6; margin-bottom: 0.75rem; }
+  .food-must { font-size: 0.82rem; color: var(--earth); margin-bottom: 0.75rem; }
+  .food-must strong { color: var(--rust); }
+  .food-cost { font-size: 0.82rem; color: #888; }
+  .food-cost strong { color: var(--moss); font-weight: 600; }
+
+  /* ── BUDGET ── */
+  .budget-bg { background: var(--forest); }
+  .budget-bg .section-label { color: var(--mist); }
+  .budget-bg .section-title { color: #fff; }
+  .budget-bg .section-sub { color: var(--fog); }
+
+  .budget-table {
+    background: rgba(255,255,255,0.06);
+    border-radius: 16px;
+    border: 1px solid rgba(168,192,144,0.2);
+    overflow: hidden;
+  }
+
+  .budget-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    align-items: center;
+    transition: background 0.2s;
+  }
+  .budget-row:hover { background: rgba(255,255,255,0.04); }
+  .budget-row.header {
+    background: rgba(107,143,78,0.2);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--mist);
+  }
+  .budget-row.total-row {
+    background: rgba(201,168,76,0.15);
+    border-bottom: none;
+    border-top: 2px solid rgba(201,168,76,0.4);
+  }
+
+  .brow-item { color: rgba(255,255,255,0.85); font-size: 0.9rem; }
+  .brow-low { color: var(--mist); font-size: 0.9rem; font-weight: 500; }
+  .brow-high { color: rgba(255,255,255,0.6); font-size: 0.88rem; }
+  .brow-note { font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+  .total-row .brow-item { color: var(--gold); font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 600; }
+  .total-row .brow-low { color: var(--gold); font-size: 1.1rem; font-family: 'Fraunces', serif; }
+
+  .savings-box {
+    margin-top: 1.5rem;
+    background: rgba(107,143,78,0.15);
+    border: 1px solid rgba(168,192,144,0.25);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+  }
+  .savings-box h4 {
+    font-family: 'Fraunces', serif;
+    color: var(--mist);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  .savings-box ul { padding-left: 1.2rem; }
+  .savings-box li { color: rgba(255,255,255,0.65); font-size: 0.85rem; margin-bottom: 0.35rem; line-height: 1.5; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    text-align: center;
+    padding: 3rem 1.5rem;
+    color: rgba(255,255,255,0.3);
+    font-size: 0.82rem;
+  }
+  footer a { color: var(--mist); text-decoration: none; }
+  footer p { margin-bottom: 0.4rem; }
+  footer .heart { color: var(--rust); }
+
+  /* ── responsive ── */
+  @media (max-width: 640px) {
+    .budget-grid { grid-template-columns: repeat(2,1fr); }
+    .budget-row { grid-template-columns: 1.5fr 1fr; gap: 0.5rem; }
+    .budget-row .brow-high, .budget-row .brow-note { display: none; }
+    .budget-row.header .brow-high, .budget-row.header .brow-note { display: none; }
+    .route-line { min-width: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-noise"></div>
+  <div class="leaf">🍃</div>
+  <div class="leaf">☕</div>
+  <div class="leaf">🌿</div>
+  <div class="leaf">🍂</div>
+  <div class="leaf">🌱</div>
+
+  <div class="hero-tag">✦ 4 Adults · April 3–5, 2026 · Budget Travel</div>
+  <h1>Bangalore to<br><em>Chikmagalur</em></h1>
+  <p class="hero-sub">Misty peaks, coffee estates & waterfall mornings — all under ₹6k/person</p>
+
+  <div class="hero-pills">
+    <div class="pill"><span>🚌</span> KSRTC Volvo</div>
+    <div class="pill"><span>🏔️</span> Trekking</div>
+    <div class="pill"><span>💧</span> Waterfalls</div>
+    <div class="pill"><span>☕</span> Coffee Estates</div>
+    <div class="pill"><span>🥗</span> Veg-Friendly</div>
+  </div>
+
+  <div class="hero-budget">
+    <div class="budget-grid">
+      <div class="budget-item">
+        <div class="amount">₹1,200</div>
+        <div class="label">Stay/Person/Night</div>
+      </div>
+      <div class="budget-item">
+        <div class="amount">~₹700</div>
+        <div class="label">Bus/Person (one way)</div>
+      </div>
+      <div class="budget-item">
+        <div class="amount">~₹800</div>
+        <div class="label">Food/Person/Day</div>
+      </div>
+      <div class="budget-item total">
+        <div class="amount">~₹5,800</div>
+        <div class="label">Total/Person (2 nights)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    Scroll to explore
+    <div class="scroll-arrow"></div>
+  </div>
+</header>
+
+
+<!-- TRANSPORT -->
+<section class="transport-bg">
+  <div class="section">
+    <div class="section-label">Getting there</div>
+    <div class="section-title">Bangalore → Chikmagalur</div>
+    <div class="section-sub" style="color:var(--fog)">KSRTC Volvo is the smartest, cheapest choice for 4 adults</div>
+
+    <div class="transport-card">
+      <div class="route-visual">
+        <div class="city-badge">🏙️ Bangalore</div>
+        <div class="route-line"></div>
+        <div class="city-badge">🏔️ Chikmagalur</div>
+      </div>
+
+      <div class="bus-details">
+        <div class="bus-stat">
+          <div class="val">~4.5 hrs</div>
+          <div class="key">Duration</div>
+        </div>
+        <div class="bus-stat">
+          <div class="val">₹550–700</div>
+          <div class="key">Per Person (Volvo AC)</div>
+        </div>
+        <div class="bus-stat">
+          <div class="val">₹2,200–2,800</div>
+          <div class="key">Total (4 adults)</div>
+        </div>
+        <div class="bus-stat">
+          <div class="val">4–5 AM</div>
+          <div class="key">Earliest Departures</div>
+        </div>
+      </div>
+
+      <div class="tip-box" style="margin-bottom:1rem">
+        <strong>🎯 Pro Tips for April 3rd Early Morning</strong>
+        Book KSRTC tickets at <a href="https://www.ksrtc.in" target="_blank" style="color:var(--gold)">ksrtc.in</a> or the Redbus app at least 3–4 days before. Departure from <strong>Kempegowda Bus Station (Majestic)</strong> — take the 4:00 AM or 5:30 AM Volvo to reach Chikmagalur by 8–9 AM and maximise Day 1. Book return bus for Apr 5 on the same day.
+      </div>
+
+      <div class="tip-box">
+        <strong>🔄 Return (Apr 5) — Checkout Day</strong>
+        Check out early (by 11 AM), store bags at the bus stand or stay's reception, do a light morning activity, then catch the 2 PM or 4 PM Volvo back to Bangalore. Reach by 7–8 PM.
+      </div>
+
+      <div class="local-options">
+        <div class="local-opt">
+          <div class="icon">🛺</div>
+          <h4>Auto / E-Rickshaw</h4>
+          <p>Best for town errands, market visits, nearby spots</p>
+          <div class="price">₹30–80 per trip</div>
+        </div>
+        <div class="local-opt">
+          <div class="icon">🏍️</div>
+          <h4>Rental Bikes / Scooters</h4>
+          <p>Freedom to roam at your own pace — fuel included sometimes</p>
+          <div class="price">₹400–600/day per bike</div>
+        </div>
+        <div class="local-opt">
+          <div class="icon">🚗</div>
+          <h4>Shared Cab (Day Trips)</h4>
+          <p>Book a cab for Mullayanagiri/waterfall day — split 4 ways</p>
+          <div class="price">₹1,500–2,000/day split</div>
+        </div>
+        <div class="local-opt">
+          <div class="icon">🚶</div>
+          <h4>Walk / Hike</h4>
+          <p>Trails from most estates — just pack water and good shoes</p>
+          <div class="price">Free 🎉</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- STAY -->
+<section>
+  <div class="section">
+    <div class="section-label">Where to stay — Real Airbnb Listings</div>
+    <div class="section-title">Actual Airbnb & Homestay Options</div>
+    <div class="section-sub">Searched & verified listings near your itinerary. All centrally located. Budget: ₹4,800/night total (₹1,200/person).</div>
+
+    <!-- Recommendation Banner -->
+    <div style="background: linear-gradient(135deg, var(--forest), var(--moss)); border-radius:14px; padding:1.2rem 1.5rem; margin-bottom:1.5rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+      <div style="font-size:2rem;">🏆</div>
+      <div>
+        <div style="color:var(--gold); font-weight:700; font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase;">Our Top Pick</div>
+        <div style="color:#fff; font-family:'Fraunces',serif; font-size:1.1rem;">Suraksha Homestay (Bungalow in Coffee Plantation)</div>
+        <div style="color:var(--mist); font-size:0.82rem; margin-top:0.2rem;">Family-run estate · Packages from ₹850–₹2,500/person · 5 bedrooms · Walks, food & hospitality included</div>
+      </div>
+    </div>
+
+    <div class="stay-grid">
+
+      <!-- LISTING 1: Suraksha Homestay -->
+      <div class="stay-card">
+        <div class="stay-thumb a1" style="background: linear-gradient(135deg, #2a5a1a, #3d7028);">
+          🌿
+          <div class="stay-badge">⭐ Top Pick</div>
+        </div>
+        <div class="stay-body">
+          <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.4rem;">
+            <span style="background:#FFF3E0; color:var(--rust); font-size:0.72rem; font-weight:700; padding:0.2rem 0.55rem; border-radius:50px;">★ 4.61</span>
+            <span style="background:var(--fog); color:var(--moss); font-size:0.72rem; font-weight:600; padding:0.2rem 0.55rem; border-radius:50px;">5 Bedrooms · 5 Baths</span>
+          </div>
+          <div class="stay-name">Suraksha Homestay — Bungalow in Coffee Plantation</div>
+          <div class="stay-location">📍 Chikmagalur — inside a working coffee estate</div>
+          <div class="stay-desc">Family-owned and run plantation bungalow. They offer inclusive packages with home-cooked food (items grown by the hosts!), fast WiFi, ample parking, and genuine Malnad hospitality. 5 bedrooms so you get the whole place.</div>
+          <div class="stay-meta">
+            <span class="stay-tag">🌿 Entire Bungalow</span>
+            <span class="stay-tag">🍽️ Food Packages</span>
+            <span class="stay-tag">☕ Coffee Estate</span>
+            <span class="stay-tag">🅿️ Parking</span>
+          </div>
+          <div class="stay-price">
+            <span class="price-big">₹850–₹2,500</span>
+            <span class="price-note">/person/night (pkg based)</span>
+          </div>
+          <div class="stay-actions">
+            <a href="https://www.airbnb.co.in/rooms/14736843" target="_blank" class="btn btn-green">View on Airbnb ↗</a>
+            <a href="https://www.google.com/maps/search/suraksha+homestay+chikmagalur+coffee+plantation" target="_blank" class="btn btn-map">📍 Map</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- LISTING 2: River Cross Estate -->
+      <div class="stay-card">
+        <div class="stay-thumb a2" style="background: linear-gradient(135deg, #2d6040, #1a4a2e);">
+          🏞️
+          <div class="stay-badge">🌊 Western Ghats</div>
+        </div>
+        <div class="stay-body">
+          <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.4rem;">
+            <span style="background:#FFF3E0; color:var(--rust); font-size:0.72rem; font-weight:700; padding:0.2rem 0.55rem; border-radius:50px;">★ 4.83</span>
+            <span style="background:var(--fog); color:var(--moss); font-size:0.72rem; font-weight:600; padding:0.2rem 0.55rem; border-radius:50px;">Farm Stay · 2BR · 16 Beds</span>
+          </div>
+          <div class="stay-name">River Cross Estate Homestay</div>
+          <div class="stay-location">📍 Heart of the valley, Western Ghats</div>
+          <div class="stay-desc">A truly offbeat farm stay set in the middle of a sprawling coffee estate deep in the Western Ghats. Private rooms, river-facing, ideal if you want to be fully immersed in nature. High rating (4.83) from real guests.</div>
+          <div class="stay-meta">
+            <span class="stay-tag">🏕️ Farm Stay</span>
+            <span class="stay-tag">🌊 River Nearby</span>
+            <span class="stay-tag">🦅 Offbeat Location</span>
+            <span class="stay-tag">🌿 Coffee Estate</span>
+          </div>
+          <div class="stay-price">
+            <span class="price-big">~₹3,500–5,000</span>
+            <span class="price-note">/night (check for 4-guest pkg)</span>
+          </div>
+          <div class="stay-actions">
+            <a href="https://www.airbnb.co.in/rooms/26888809" target="_blank" class="btn btn-green">View on Airbnb ↗</a>
+            <a href="https://www.google.com/maps/search/river+cross+estate+homestay+chikmagalur" target="_blank" class="btn btn-map">📍 Map</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- LISTING 3: Two Cottages Coffee Plantation -->
+      <div class="stay-card">
+        <div class="stay-thumb a3" style="background: linear-gradient(135deg, #3a5a2a, #4a7035);">
+          🛖
+          <div class="stay-badge">💧 Private Lake</div>
+        </div>
+        <div class="stay-body">
+          <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.4rem;">
+            <span style="background:#FFF3E0; color:var(--rust); font-size:0.72rem; font-weight:700; padding:0.2rem 0.55rem; border-radius:50px;">★ 4.57</span>
+            <span style="background:var(--fog); color:var(--moss); font-size:0.72rem; font-weight:600; padding:0.2rem 0.55rem; border-radius:50px;">2 Private Cottages</span>
+          </div>
+          <div class="stay-name">Two Private Cottages in Coffee Plantation</div>
+          <div class="stay-location">📍 Chikmagalur — inside coffee plantation</div>
+          <div class="stay-desc">Two separate private cottages nestled inside a working coffee plantation. Bonus: private lake and waterfall within the estate! Honest hosts: "Not a luxury 5-star — a homestay with real hills vibes." Perfect for your group.</div>
+          <div class="stay-meta">
+            <span class="stay-tag">🛖 Private Cottages</span>
+            <span class="stay-tag">💧 Private Waterfall</span>
+            <span class="stay-tag">🏞️ Private Lake</span>
+            <span class="stay-tag">☕ Plantation</span>
+          </div>
+          <div class="stay-price">
+            <span class="price-big">~₹3,800–4,800</span>
+            <span class="price-note">/night for 4 guests (est.)</span>
+          </div>
+          <div class="stay-actions">
+            <a href="https://www.airbnb.com/rooms/1357876846484265694" target="_blank" class="btn btn-green">View on Airbnb ↗</a>
+            <a href="https://www.google.com/maps/search/coffee+plantation+cottages+chikmagalur" target="_blank" class="btn btn-map">📍 Map</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Proximity Guide -->
+    <div style="margin-top:1.5rem; background:#fff; border-radius:14px; padding:1.4rem 1.6rem; border:1px solid rgba(107,143,78,0.15); box-shadow: 0 2px 12px rgba(27,58,16,0.06)">
+      <strong style="color:var(--forest); font-size:0.95rem; font-family:'Fraunces',serif;">📍 Distance from Stays to Itinerary Spots</strong>
+      <div style="margin-top:0.9rem; display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:0.75rem;">
+        <div style="background:var(--fog); border-radius:8px; padding:0.75rem 1rem;">
+          <div style="font-weight:600; color:var(--moss); font-size:0.85rem;">🏔️ Mullayanagiri Trek</div>
+          <div style="font-size:0.78rem; color:#666; margin-top:0.2rem;">~20–25 km from Aldur area<br>~45 min shared cab</div>
+        </div>
+        <div style="background:var(--fog); border-radius:8px; padding:0.75rem 1rem;">
+          <div style="font-weight:600; color:var(--moss); font-size:0.85rem;">💧 Hebbe Falls</div>
+          <div style="font-size:0.78rem; color:#666; margin-top:0.2rem;">~30 km from Chikmagalur<br>~1 hr via Kalasa Road</div>
+        </div>
+        <div style="background:var(--fog); border-radius:8px; padding:0.75rem 1rem;">
+          <div style="font-weight:600; color:var(--moss); font-size:0.85rem;">🌅 Hirekolale Lake</div>
+          <div style="font-size:0.78rem; color:#666; margin-top:0.2rem;">10 km from most homestays<br>~20 min auto ride</div>
+        </div>
+        <div style="background:var(--fog); border-radius:8px; padding:0.75rem 1rem;">
+          <div style="font-weight:600; color:var(--moss); font-size:0.85rem;">🚌 Chikmagalur Bus Stand</div>
+          <div style="font-size:0.78rem; color:#666; margin-top:0.2rem;">Town centre estates: 5 min<br>Aldur/Rural: ~30 min cab</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:1rem; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.35); border-radius:12px; padding:1rem 1.4rem;">
+      <strong style="color:var(--earth); font-size:0.88rem;">⚡ Book Fast — April is Peak Season!</strong>
+      <p style="font-size:0.83rem; color:#666; margin-top:0.3rem; line-height:1.6;">Use <strong>checkin Apr 3, checkout Apr 5, 4 guests</strong> on Airbnb. Also check <a href="https://www.makemytrip.com/hotels/chikmagalur-hotels.html" target="_blank" style="color:var(--moss)">MakeMyTrip</a> and <a href="https://www.chikkamagalurustays.in" target="_blank" style="color:var(--moss)">ChikkamagalurStays.in</a> for additional estate homestays at ₹2,000/night range.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ITINERARY -->
+<section class="itinerary-bg">
+  <div class="section">
+    <div class="section-label">Day by day</div>
+    <div class="section-title">Your Itinerary</div>
+    <div class="section-sub">3 days, packed with peaks, mist, coffee, and good food</div>
+
+    <!-- DAY 1 -->
+    <div class="day-block">
+      <div class="day-header">
+        <div class="day-num">01</div>
+        <div class="day-info">
+          <h3>Thursday, April 3 — Arrival & Coffee Trail</h3>
+          <p>Early morning arrival → settle in → coffee estate walk → sunset viewpoint</p>
+        </div>
+      </div>
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-card">
+            <div class="tl-time">4:00 – 5:30 AM</div>
+            <div class="tl-title">🚌 Board KSRTC Volvo from Bangalore (Majestic)</div>
+            <div class="tl-desc">Kempegowda Bus Station. Take the earliest Volvo — grab snacks or coffee at the bus station before boarding. The drive through the ghats as dawn breaks is stunning.</div>
+            <div class="tl-footer">
+              <span class="cost-tag">₹550–700/person</span>
+              <a href="https://www.google.com/maps/place/Kempegowda+Bus+Station" target="_blank" class="map-link">📍 Majestic Bus Stand</a>
+              <a href="https://www.ksrtc.in" target="_blank" class="map-link">🎟️ Book KSRTC</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-card">
+            <div class="tl-time">8:30 – 9:30 AM</div>
+            <div class="tl-title">☕ Arrive Chikmagalur → Breakfast</div>
+            <div class="tl-desc">Check into your stay, freshen up. Grab a South Indian breakfast nearby — idli, dosa, vada, filter coffee. Don't skip the local filter kaapi!</div>
+            <div class="tl-footer">
+              <span class="cost-tag">₹80–150/person</span>
+              <span class="veg-tag">🥗 100% Veg Options</span>
+              <a href="https://www.google.com/maps/search/breakfast+chikmagalur" target="_blank" class="map-link">📍 Find Cafes</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-card">
+            <div class="tl-time">10:30 AM – 1:00 PM</div>
+            <div class="tl-title">🌿 Coffee Estate Walk — Baba Budangiri / Seethalayam</div>
+            <div class="tl-desc">Take a guided walk through a coffee estate. Learn how coffee is grown, processed, and roasted. Many estates around Aldur offer free or paid guided tours. Gorgeous misty surroundings in April.</div>
+            <div class="tl-footer">
+              <span class="cost-tag">₹100–300/person</span>
+              <span class="veg-tag">🌿 Nature Activity</span>
+              <a href="https://www.google.com/maps/search/coffee+estate+tour+chikmagalur" target="_blank" class="map-link">📍 Coffee Estates</a>
+            </div>
+            <div class="alt-box">
+              <div class="alt-label">⚡ Alternative Option</div>
+              <ul>
+                <li><a href="https://www.google.com/maps/place/Baba+Budangiri" target="_blank">Baba Budangiri</a> — sacred hill, lovely trail, coffee country views</li>
+                <li><a href="https://www.google.com/maps/search/manjarabad+fort+hassan" target="_blank">Manjarabad Fort (Hassan, 40 km)</a> — star-shaped fort, great views</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-card">
+            <div class="tl-time">1:30 – 2:30 PM</div>
+            <div class="tl-title">🍽️ Lunch</div>
+            <div class="tl-desc">Head to a local restaurant in Chikmagalur town. Try Malgudi Café or Hotel Udupi Krishna — budget-friendly, vegetarian-heavy South Indian meals.</div>
+            <div class="tl-footer">
+              <span class="cost-tag">₹150–250/person</span>
+              <span class="veg-tag">🥗 Veg-Friendly</span>
+              <a href="https://www.google.com/maps/search/vegetarian+restaurants+chikmagalur" target="_blank" class="map-link">📍 Restaurants Map</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-card">
+            <div class="tl-time">3:30 – 6:00 PM</div>
+            <div class="tl-title">🌅 Hirekolale Lake & Sunset</div>
+            <div class="tl-desc">Calm lake on the edge of town — beautiful for an evening walk or picnic. The golden hour here is stunning, framed by rolling coffee-covered hills. Easy, flat walk around the lake.</div>
+            <div class="tl-footer">
+              <span class="cost-tag">Free</span>
+              <a href="https://www.google.com/maps/place/Hirekolale+Lake" target="_blank" class="map-link">📍 Hirekolale Lake</a>
+            </div>
+            <div class="alt-box">
+              <div class="alt-label">⚡ Alternative Sunset Spots</div>
+              <ul>
+                <li><a href="https://www.google.com/maps/place/Dattatreya+Peeta+Bababudangiri" target="_blank">Bababudangiri Peak Viewpoint</a> — if you're staying near that area</li>
+                <li><a href="https://www.google.com/maps/search/golf+course+chikmagalur+viewpoint" target="_blank">Chikmagalur Golf Course Road</a> — scenic, great for walks</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-card">
+            <div class="tl-time">7:30 PM onwards</div>
+            <div class="tl-title">🍴 Dinner + Rest</div>
+            <div class="tl-desc">Early dinner — long trekking day tomorrow! Try Kaapi Katte or Café Coffeeland for a relaxed evening. Rest well.</div>
+            <div class="tl-footer">
+              <span class="cost-tag">₹200–350/person</span>
+              <span class="veg-tag">🥗 Veg Options</span>
+              <a href="https://www.google.com/maps/search/dinner+restaurants+chikmagalur" target="_blank" class="map-link">📍 Dinner Map</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="day-block">
+      <div class="day-header">
+        <div class="day-num">02</div>
+        <div class="day-info">
+          <h3>Friday, April 4 — Peaks, Waterfalls & Adventure</h3>
+          <p>Early start → Mullayanagiri trek → Hebbe Falls → evening chill</p>
+        </div>
+      </div>
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-card">
+            <div class="tl-time">5:30 AM</div>
+            <div class="tl-title">🌄 Early Start — Drive to Mullayanagiri</div>
+            <div class="tl-desc">Hire a shared cab or rent bikes. Drive up through the Sarpadhari route — one of the most dramatic mountain roads in Karnataka. Arrive at the base before sunrise if possible.</div>
+            <div class="tl-footer">
+              <span class="cost-tag">₹400–500/person shared cab</span>
+              <a href="https://www.google.com/maps/place/Mullayanagiri" target="_blank" class="map-link">📍 Mullayanagiri</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-card">
+            <div class="tl-time">6:30 – 9:00 AM</div>
+            <div class="tl-title">🏔️ Mullayanagiri Trek — Highest Peak in Karnataka</div>
+            <div class="tl-desc">1,930m above sea level. The trail to the summit takes about 30–45 mins. You'll be above the clouds! Temple at the top. Wear sturdy shoes, carry water and light snacks. Best views on a clear morning.</div>
+            <div class="tl-footer">
+              <span class="cost-tag">₹30 entry fee</span>
+              <span class="veg-tag">⚡ Moderate Difficulty</span>
+              <a href="https://www.google.com/maps/place/Mullayanagiri+Peak" target="_blank" class="map-link">📍 Trek Start Point</a>
+            </div>
+            <div class="alt-box">
+              <div class="alt-label">⚡ Alternative Treks (nearby)</div>
+              <ul>
+                <li><a href="https://www.google.com/maps/place/Kudremukh+National+Park" target="_blank">Kudremukh Trek (40 km away)</a> — UNESCO site, more challenging, prior permit needed</li>
+                <li><a href="https://www.google.com/maps/place/Kemmangundi" target="_blank">Kemmanagundi / Z Point</a> — easier walk, stunning valley views</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-card">
+            <div class="tl-time">9:30 – 10:30 AM</div>
+            <div class="tl-title">☕ Post-Trek Breakfast at the Summit Viewpoint</div>
+            <div class="tl-desc">Small stalls near the base serve hot chai, bread omelette, and biscuits. Perfect post-hike fuel while soaking in the views. Carry some snacks too for backup.</div>
+            <div class="tl-footer">
+              <span class="cost-tag">₹50–100/person</span>
+              <span class="veg-tag">🥗 Chai & Snacks</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-card">
+            <div class="tl-time">11:00 AM – 2:30 PM</div>
+            <div class="tl-title">💧 Hebbe Falls — Hidden Waterfall in the Forest</div>
+            <div class="tl-desc">20 km from Mullayanagiri area (via Kalasa Road). A two-tiered waterfall (168 ft) nestled deep in the Bhadra Reserve Forest. Requires a jeep ride into the forest (jeeps available at the gate), or a 4 km hike. Worth every step.</div>
+            <div class="tl-footer">
+              <span class="cost-tag">₹200–250/jeep (shared)</span>
+              <a href="https://www.google.com/maps/place/Hebbe+Falls" target="_blank" class="map-link">📍 Hebbe Falls</a>
+            </div>
+            <div class="alt-box">
+              <div class="alt-label">⚡ Other Waterfall Options</div>
+              <ul>
+                <li><a href="https://www.google.com/maps/place/Jhari+Falls" target="_blank">Jhari Falls</a> — less crowded, near Mudigere</li>
+                <li><a href="https://www.google.com/maps/place/Kallathigiri+Falls" target="_blank">Kallathigiri Falls</a> — seasonal, close to Mullayanagiri</li>
+                <li><a href="https://www.google.com/maps/place/Bhadra+Wildlife+Sanctuary" target="_blank">Bhadra Dam & Reservoir</a> — scenic boat rides available</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-card">
+            <div class="tl-time">3:00 – 4:00 PM</div>
+            <div class="tl-title">🍽️ Late Lunch</div>
+            <div class="tl-desc">Pack a lunch from town (poha, rotis, fruit) or eat at a dhaba on the highway back. Budget-friendly and filling. Or head back to Chikmagalur for a proper sit-down meal.</div>
+            <div class="tl-footer">
+              <span class="cost-tag">₹100–200/person</span>
+              <span class="veg-tag">🥗 Veg Options Available</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-card">
+            <div class="tl-time">5:00 – 7:00 PM</div>
+            <div class="tl-title">🛒 Chikmagalur Market Walk + Coffee Shopping</div>
+            <div class="tl-desc">Walk through the local market. Buy freshly roasted coffee beans, spice powders, and local honey as souvenirs. Prices are much cheaper than Bangalore.</div>
+            <div class="tl-footer">
+              <span class="cost-tag">₹200–500/person (shopping)</span>
+              <a href="https://www.google.com/maps/search/chikmagalur+coffee+market" target="_blank" class="map-link">📍 Market Area</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-card">
+            <div class="tl-time">8:00 PM</div>
+            <div class="tl-title">🍴 Group Dinner — Best Day Deserves Best Meal</div>
+            <div class="tl-desc">Treat yourselves to a nicer dinner at Cafe Coffeeland or Peekay's. Share dishes, swap stories from the trek, and celebrate the trip!</div>
+            <div class="tl-footer">
+              <span class="cost-tag">₹300–450/person</span>
+              <span class="veg-tag">🥗 Veg-Friendly</span>
+              <a href="https://www.google.com/maps/search/best+restaurant+chikmagalur" target="_blank" class="map-link">📍 Restaurants</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- DAY 3 -->
+    <div class="day-block">
+      <div class="day-header">
+        <div class="day-num">03</div>
+        <div class="day-info">
+          <h3>Saturday, April 5 — Lazy Morning & Head Home</h3>
+          <p>Slow morning → Cafe hopping → checkout → Bangalore</p>
+        </div>
+      </div>
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-card">
+            <div class="tl-time">7:00 – 9:00 AM</div>
+            <div class="tl-title">☕ Slow Morning & Estate Sunrise Walk</div>
+            <div class="tl-desc">No alarm pressure today. Step outside early, breathe in the coffee-scented air, take a short walk through the estate or nearby paths. This is the chill morning you've earned.</div>
+            <div class="tl-footer">
+              <span class="cost-tag">Free</span>
+              <span class="veg-tag">🌿 Calm & Peaceful</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-card">
+            <div class="tl-time">9:00 – 10:30 AM</div>
+            <div class="tl-title">🥐 Breakfast at a Cafe</div>
+            <div class="tl-desc">Head to Kaapi Katte or The Backyard for a proper café breakfast — pancakes, toasts, eggs, and the best filter coffee in Karnataka. Linger over coffee.</div>
+            <div class="tl-footer">
+              <span class="cost-tag">₹150–250/person</span>
+              <span class="veg-tag">🥗 Veg Friendly</span>
+              <a href="https://www.google.com/maps/search/cafe+breakfast+chikmagalur" target="_blank" class="map-link">📍 Cafes</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-card">
+            <div class="tl-time">11:00 AM</div>
+            <div class="tl-title">🏡 Checkout</div>
+            <div class="tl-desc">Checkout of your Airbnb. Store bags if needed. You've got a few hours before the bus.</div>
+            <div class="tl-footer">
+              <span class="cost-tag">—</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-card">
+            <div class="tl-time">11:30 AM – 1:30 PM</div>
+            <div class="tl-title">🦋 Optional: Ayyanakere Lake or Z-Point</div>
+            <div class="tl-desc">A half-hour auto ride takes you to Ayyanakere — a serene lake perfect for a farewell nature moment. Or head up to Z-Point in Kemmanagundi for views you'll dream about for weeks.</div>
+            <div class="tl-footer">
+              <span class="cost-tag">₹50–80/person auto</span>
+              <a href="https://www.google.com/maps/place/Ayyanakere+Lake" target="_blank" class="map-link">📍 Ayyanakere Lake</a>
+              <a href="https://www.google.com/maps/place/Z+Point+Kemmangundi" target="_blank" class="map-link">📍 Z-Point</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-card">
+            <div class="tl-time">2:00 PM</div>
+            <div class="tl-title">🍽️ Final Lunch before Departure</div>
+            <div class="tl-desc">One last South Indian thali. Guaranteed to make you miss Chikmagalur food back in Bangalore.</div>
+            <div class="tl-footer">
+              <span class="cost-tag">₹120–180/person</span>
+              <span class="veg-tag">🥗 South Indian Thali</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-card">
+            <div class="tl-time">3:00 / 4:00 PM</div>
+            <div class="tl-title">🚌 KSRTC Volvo Back to Bangalore</div>
+            <div class="tl-desc">Board at Chikmagalur bus stand. Reach Bangalore by 7:30–8:30 PM. Nap on the bus — you've earned it.</div>
+            <div class="tl-footer">
+              <span class="cost-tag">₹550–700/person</span>
+              <a href="https://www.google.com/maps/place/Chikmagalur+Bus+Stand" target="_blank" class="map-link">📍 Chikmagalur Bus Stand</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOD -->
+<section>
+  <div class="section">
+    <div class="section-label">Where to eat</div>
+    <div class="section-title">Restaurants & Cafes</div>
+    <div class="section-sub">All vetted for vegetarian options, value for money, and taste</div>
+
+    <div class="food-grid">
+
+      <div class="food-card">
+        <div class="food-top">
+          <div class="food-icon">☕</div>
+          <div class="food-badges">
+            <span class="badge badge-both">Veg + Non-Veg</span>
+            <span class="badge badge-cafe">Café</span>
+          </div>
+        </div>
+        <div class="food-name">Kaapi Katte</div>
+        <div class="food-type">Café · All-day menu</div>
+        <div class="food-desc">The most iconic café in Chikmagalur. Filter coffee, sandwiches, masala dosa, and quick bites. Super popular — go early or expect a small wait.</div>
+        <div class="food-must"><strong>Must try:</strong> Filter kaapi, Masala Dosa, Veg Sandwich</div>
+        <div class="food-cost">Cost: <strong>₹80–200/person</strong></div>
+        <div style="margin-top:0.75rem">
+          <a href="https://www.google.com/maps/search/kaapi+katte+chikmagalur" target="_blank" class="btn btn-map" style="font-size:0.78rem">📍 Map</a>
+        </div>
+      </div>
+
+      <div class="food-card">
+        <div class="food-top">
+          <div class="food-icon">🍛</div>
+          <div class="food-badges">
+            <span class="badge badge-veg">Pure Veg</span>
+          </div>
+        </div>
+        <div class="food-name">Hotel Udupi Krishna</div>
+        <div class="food-type">South Indian · Budget meals</div>
+        <div class="food-desc">Old-school Udupi-style restaurant. Unlimited thali, fresh idlis, crisp vadas, and classic South Indian staples. Very wallet-friendly — a traveller's staple.</div>
+        <div class="food-must"><strong>Must try:</strong> Unlimited South Indian Meals, Rava Idli, Filter Coffee</div>
+        <div class="food-cost">Cost: <strong>₹80–150/person</strong></div>
+        <div style="margin-top:0.75rem">
+          <a href="https://www.google.com/maps/search/udupi+krishna+restaurant+chikmagalur" target="_blank" class="btn btn-map" style="font-size:0.78rem">📍 Map</a>
+        </div>
+      </div>
+
+      <div class="food-card">
+        <div class="food-top">
+          <div class="food-icon">🌿</div>
+          <div class="food-badges">
+            <span class="badge badge-both">Veg + Non-Veg</span>
+            <span class="badge badge-cafe">Trendy</span>
+          </div>
+        </div>
+        <div class="food-name">Café Coffeeland</div>
+        <div class="food-type">Café-Restaurant · Estate-themed</div>
+        <div class="food-desc">A beautiful sit-down café surrounded by greens. Great for dinner or a long lunch. Relaxed ambience, decent menu — their veg starters and rice bowls are excellent.</div>
+        <div class="food-must"><strong>Must try:</strong> Veg Grilled Sandwich, Rice Bowl, Estate Filter Coffee</div>
+        <div class="food-cost">Cost: <strong>₹200–350/person</strong></div>
+        <div style="margin-top:0.75rem">
+          <a href="https://www.google.com/maps/search/cafe+coffeeland+chikmagalur" target="_blank" class="btn btn-map" style="font-size:0.78rem">📍 Map</a>
+        </div>
+      </div>
+
+      <div class="food-card">
+        <div class="food-top">
+          <div class="food-icon">🍽️</div>
+          <div class="food-badges">
+            <span class="badge badge-both">Veg + Non-Veg</span>
+          </div>
+        </div>
+        <div class="food-name">Peekay's Clarion</div>
+        <div class="food-type">Multi-cuisine · Restaurant</div>
+        <div class="food-desc">One of the better full-service restaurants in town. Good for a group dinner. North Indian and South Indian options. The thali and butter naan combo is crowd-pleasing.</div>
+        <div class="food-must"><strong>Must try:</strong> Paneer dishes, Thali, Chicken Ghee Roast (non-veg)</div>
+        <div class="food-cost">Cost: <strong>₹250–400/person</strong></div>
+        <div style="margin-top:0.75rem">
+          <a href="https://www.google.com/maps/search/peekays+restaurant+chikmagalur" target="_blank" class="btn btn-map" style="font-size:0.78rem">📍 Map</a>
+        </div>
+      </div>
+
+      <div class="food-card">
+        <div class="food-top">
+          <div class="food-icon">🥞</div>
+          <div class="food-badges">
+            <span class="badge badge-veg">Veg-Friendly</span>
+            <span class="badge badge-cafe">Café</span>
+          </div>
+        </div>
+        <div class="food-name">The Backyard Café</div>
+        <div class="food-type">Café · Brunch Spot</div>
+        <div class="food-desc">A newer, Instagram-worthy café with a lovely outdoor seating area. Great for the Day 3 slow breakfast. Pancakes, toast, fruit bowls, and excellent coffee.</div>
+        <div class="food-must"><strong>Must try:</strong> Banana Pancakes, Avocado Toast, Cold Brew Coffee</div>
+        <div class="food-cost">Cost: <strong>₹150–280/person</strong></div>
+        <div style="margin-top:0.75rem">
+          <a href="https://www.google.com/maps/search/the+backyard+cafe+chikmagalur" target="_blank" class="btn btn-map" style="font-size:0.78rem">📍 Map</a>
+        </div>
+      </div>
+
+      <div class="food-card">
+        <div class="food-top">
+          <div class="food-icon">🏕️</div>
+          <div class="food-badges">
+            <span class="badge badge-veg">Pure Veg</span>
+          </div>
+        </div>
+        <div class="food-name">Malgudi Café (Near Bus Stand)</div>
+        <div class="food-type">Quick Bites · Budget Café</div>
+        <div class="food-desc">Great for a quick post-travel meal or pre-bus snack. Very affordable. Known for fresh dosas, poha, and strong coffee. No-frills, maximum flavour.</div>
+        <div class="food-must"><strong>Must try:</strong> Masala Dosa, Poha, Bun Butter Jam</div>
+        <div class="food-cost">Cost: <strong>₹60–120/person</strong></div>
+        <div style="margin-top:0.75rem">
+          <a href="https://www.google.com/maps/search/malgudi+cafe+chikmagalur" target="_blank" class="btn btn-map" style="font-size:0.78rem">📍 Map</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:1.5rem; background:var(--fog); border-radius:12px; padding:1.25rem 1.5rem; border:1px solid rgba(107,143,78,0.2)">
+      <strong style="color:var(--forest)">🥗 Vegetarian Note</strong>
+      <p style="font-size:0.85rem; color:#555; margin-top:0.4rem; line-height:1.6">All restaurants above are either pure-veg or clearly separate veg options. Chikmagalur is a predominantly South Indian town — idli, dosa, sambar, and thalis are universally vegetarian and excellent. Your strict veg member will be very happy here!</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- SOUVENIRS -->
+<section style="background: var(--warm);">
+  <div class="section">
+    <div class="section-label">Bring home Chikmagalur</div>
+    <div class="section-title">What to Buy & Where</div>
+    <div class="section-sub">The definitive souvenir list — with shops, maps & budget estimates</div>
+
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(270px,1fr)); gap:1.2rem; margin-bottom:2rem;">
+
+      <!-- Coffee -->
+      <div style="background:#fff; border-radius:14px; padding:1.4rem; border:1px solid rgba(107,143,78,0.15); box-shadow:0 2px 12px rgba(27,58,16,0.06);">
+        <div style="font-size:2.2rem; margin-bottom:0.6rem;">☕</div>
+        <div style="font-family:'Fraunces',serif; font-size:1.1rem; font-weight:600; color:var(--forest); margin-bottom:0.3rem;">Arabica & Robusta Coffee</div>
+        <div style="font-size:0.8rem; color:var(--rust); font-weight:600; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.5rem;">#1 Must-Buy</div>
+        <div style="font-size:0.84rem; color:#666; line-height:1.6; margin-bottom:0.75rem;">Chikmagalur is the birthplace of Indian coffee. Buy estate-specific blends — Arabica for light floral notes, Robusta for strong bold brew. Comes as beans, ground, or filter powder.</div>
+        <div style="font-size:0.82rem; color:var(--earth); margin-bottom:0.5rem;"><strong>🏪 Buy at:</strong> Panduranga Coffee 1938, MG Road <span style="color:#999">(since 1938!)</span><br>Also: Direct from your estate stay</div>
+        <div style="font-size:0.82rem;"><strong style="color:var(--moss)">₹150–400</strong> <span style="color:#999">/ 250g bag</span></div>
+        <div style="margin-top:0.75rem;"><a href="https://www.google.com/maps/search/panduranga+coffee+1938+chikmagalur" target="_blank" class="btn btn-map" style="font-size:0.76rem; padding:0.4rem 0.9rem;">📍 Panduranga Coffee</a></div>
+      </div>
+
+      <!-- Spices -->
+      <div style="background:#fff; border-radius:14px; padding:1.4rem; border:1px solid rgba(107,143,78,0.15); box-shadow:0 2px 12px rgba(27,58,16,0.06);">
+        <div style="font-size:2.2rem; margin-bottom:0.6rem;">🌶️</div>
+        <div style="font-family:'Fraunces',serif; font-size:1.1rem; font-weight:600; color:var(--forest); margin-bottom:0.3rem;">Organic Spices</div>
+        <div style="font-size:0.8rem; color:var(--rust); font-weight:600; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.5rem;">Freshest You'll Find</div>
+        <div style="font-size:0.84rem; color:#666; line-height:1.6; margin-bottom:0.75rem;">Cardamom, black pepper, cinnamon, vanilla pods, kalpasi (black stone flower), cloves. Fresh-from-the-estate quality, 40–60% cheaper than Bangalore supermarkets.</div>
+        <div style="font-size:0.82rem; color:var(--earth); margin-bottom:0.5rem;"><strong>🏪 Buy at:</strong> The Spice Hub, Indira Gandhi Road<br>Also: Namma Angady, opp. Panduranga Coffee, MG Road</div>
+        <div style="font-size:0.82rem;"><strong style="color:var(--moss)">₹50–200</strong> <span style="color:#999">/ pack of spices</span></div>
+        <div style="margin-top:0.75rem;"><a href="https://www.google.com/maps/search/the+spice+hub+chikmagalur" target="_blank" class="btn btn-map" style="font-size:0.76rem; padding:0.4rem 0.9rem;">📍 The Spice Hub</a></div>
+      </div>
+
+      <!-- Handmade Chocolate -->
+      <div style="background:#fff; border-radius:14px; padding:1.4rem; border:1px solid rgba(107,143,78,0.15); box-shadow:0 2px 12px rgba(27,58,16,0.06);">
+        <div style="font-size:2.2rem; margin-bottom:0.6rem;">🍫</div>
+        <div style="font-family:'Fraunces',serif; font-size:1.1rem; font-weight:600; color:var(--forest); margin-bottom:0.3rem;">Coffee-Infused Chocolates</div>
+        <div style="font-size:0.8rem; color:var(--rust); font-weight:600; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.5rem;">Best Gift Option</div>
+        <div style="font-size:0.84rem; color:#666; line-height:1.6; margin-bottom:0.75rem;">Locally made artisan chocolates with coffee, cardamom, nuts, and fruit flavours. Panduranga Coffee is famous for its coffee chocolates — unique to this region.</div>
+        <div style="font-size:0.82rem; color:var(--earth); margin-bottom:0.5rem;"><strong>🏪 Buy at:</strong> Panduranga Coffee 1938, MG Road<br>Also: The Spice Hub & local sweet shops</div>
+        <div style="font-size:0.82rem;"><strong style="color:var(--moss)">₹100–300</strong> <span style="color:#999">/ box</span></div>
+        <div style="margin-top:0.75rem;"><a href="https://www.google.com/maps/search/panduranga+coffee+chocolates+chikmagalur" target="_blank" class="btn btn-map" style="font-size:0.76rem; padding:0.4rem 0.9rem;">📍 Panduranga Coffee</a></div>
+      </div>
+
+      <!-- Local Honey -->
+      <div style="background:#fff; border-radius:14px; padding:1.4rem; border:1px solid rgba(107,143,78,0.15); box-shadow:0 2px 12px rgba(27,58,16,0.06);">
+        <div style="font-size:2.2rem; margin-bottom:0.6rem;">🍯</div>
+        <div style="font-family:'Fraunces',serif; font-size:1.1rem; font-weight:600; color:var(--forest); margin-bottom:0.3rem;">Raw Forest Honey</div>
+        <div style="font-size:0.8rem; color:var(--sage); font-weight:600; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.5rem;">Pure & Unprocessed</div>
+        <div style="font-size:0.84rem; color:#666; line-height:1.6; margin-bottom:0.75rem;">Local honey produced from the diverse flora of the Western Ghats. Look for raw, unprocessed honey for best flavour and health benefits. Great for gifting.</div>
+        <div style="font-size:0.82rem; color:var(--earth); margin-bottom:0.5rem;"><strong>🏪 Buy at:</strong> Local markets on Market Road<br>Also: Specialty stores near MG Road</div>
+        <div style="font-size:0.82rem;"><strong style="color:var(--moss)">₹150–350</strong> <span style="color:#999">/ 250–500ml jar</span></div>
+        <div style="margin-top:0.75rem;"><a href="https://www.google.com/maps/search/market+road+chikmagalur" target="_blank" class="btn btn-map" style="font-size:0.76rem; padding:0.4rem 0.9rem;">📍 Market Road</a></div>
+      </div>
+
+      <!-- Wood Crafts -->
+      <div style="background:#fff; border-radius:14px; padding:1.4rem; border:1px solid rgba(107,143,78,0.15); box-shadow:0 2px 12px rgba(27,58,16,0.06);">
+        <div style="font-size:2.2rem; margin-bottom:0.6rem;">🪵</div>
+        <div style="font-family:'Fraunces',serif; font-size:1.1rem; font-weight:600; color:var(--forest); margin-bottom:0.3rem;">Wood & Sandalwood Crafts</div>
+        <div style="font-size:0.8rem; color:var(--sage); font-weight:600; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.5rem;">Unique Keepsakes</div>
+        <div style="font-size:0.84rem; color:#666; line-height:1.6; margin-bottom:0.75rem;">Intricate wooden jewelry boxes, wall hangings, coffee-wood artifacts, and sandalwood idols. Great home décor pieces and unique gifts that can't be found in Bangalore.</div>
+        <div style="font-size:0.82rem; color:var(--earth); margin-bottom:0.5rem;"><strong>🏪 Buy at:</strong> Nature Craft, Mallandur Road (8.5 km from town)<br>Also: Market Road stalls</div>
+        <div style="font-size:0.82rem;"><strong style="color:var(--moss)">₹100–800</strong> <span style="color:#999">depending on item</span></div>
+        <div style="margin-top:0.75rem;"><a href="https://www.google.com/maps/search/nature+craft+mallandur+road+chikmagalur" target="_blank" class="btn btn-map" style="font-size:0.76rem; padding:0.4rem 0.9rem;">📍 Nature Craft</a></div>
+      </div>
+
+      <!-- Coffee Soaps & Skincare -->
+      <div style="background:#fff; border-radius:14px; padding:1.4rem; border:1px solid rgba(107,143,78,0.15); box-shadow:0 2px 12px rgba(27,58,16,0.06);">
+        <div style="font-size:2.2rem; margin-bottom:0.6rem;">🧼</div>
+        <div style="font-family:'Fraunces',serif; font-size:1.1rem; font-weight:600; color:var(--forest); margin-bottom:0.3rem;">Coffee Soaps & Scrubs</div>
+        <div style="font-size:0.8rem; color:var(--sage); font-weight:600; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.5rem;">Thoughtful Gift</div>
+        <div style="font-size:0.84rem; color:#666; line-height:1.6; margin-bottom:0.75rem;">Handmade soaps with coffee, honey, and essential oils — natural ingredients, no chemicals. Coffee scrubs and candles are also popular. Gentle on skin and smell divine.</div>
+        <div style="font-size:0.82rem; color:var(--earth); margin-bottom:0.5rem;"><strong>🏪 Buy at:</strong> The Spice Hub, Indira Gandhi Road<br>Also: Local wellness & herbal shops</div>
+        <div style="font-size:0.82rem;"><strong style="color:var(--moss)">₹80–250</strong> <span style="color:#999">/ soap or scrub</span></div>
+        <div style="margin-top:0.75rem;"><a href="https://www.google.com/maps/search/the+spice+hub+chikmagalur+soaps" target="_blank" class="btn btn-map" style="font-size:0.76rem; padding:0.4rem 0.9rem;">📍 The Spice Hub</a></div>
+      </div>
+
+    </div>
+
+    <!-- Shopping Map strip -->
+    <div style="background: var(--forest); border-radius:14px; padding:1.4rem 1.6rem; color:#fff;">
+      <div style="font-family:'Fraunces',serif; font-size:1.1rem; color:var(--mist); margin-bottom:1rem;">🗺️ Key Shopping Spots</div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:0.75rem;">
+        <div style="background:rgba(255,255,255,0.07); border-radius:10px; padding:0.9rem 1rem;">
+          <div style="font-weight:600; font-size:0.9rem; margin-bottom:0.2rem;">Panduranga Coffee 1938</div>
+          <div style="font-size:0.75rem; color:rgba(255,255,255,0.55); margin-bottom:0.5rem;">MG Road · 9AM–9PM · Coffee + Chocolates</div>
+          <a href="https://www.google.com/maps/search/panduranga+coffee+1938+MG+road+chikmagalur" target="_blank" style="color:var(--mist); font-size:0.78rem; text-decoration:none;">📍 Open Map →</a>
+        </div>
+        <div style="background:rgba(255,255,255,0.07); border-radius:10px; padding:0.9rem 1rem;">
+          <div style="font-weight:600; font-size:0.9rem; margin-bottom:0.2rem;">The Spice Hub</div>
+          <div style="font-size:0.75rem; color:rgba(255,255,255,0.55); margin-bottom:0.5rem;">Indira Gandhi Road · Spices, soaps, dry fruits</div>
+          <a href="https://www.google.com/maps/search/spice+hub+indira+gandhi+road+chikmagalur" target="_blank" style="color:var(--mist); font-size:0.78rem; text-decoration:none;">📍 Open Map →</a>
+        </div>
+        <div style="background:rgba(255,255,255,0.07); border-radius:10px; padding:0.9rem 1rem;">
+          <div style="font-weight:600; font-size:0.9rem; margin-bottom:0.2rem;">Market Road</div>
+          <div style="font-size:0.75rem; color:rgba(255,255,255,0.55); margin-bottom:0.5rem;">8AM–10:30PM · Local stalls, honey, pepper, vanilla</div>
+          <a href="https://www.google.com/maps/search/market+road+chikmagalur+shopping" target="_blank" style="color:var(--mist); font-size:0.78rem; text-decoration:none;">📍 Open Map →</a>
+        </div>
+        <div style="background:rgba(255,255,255,0.07); border-radius:10px; padding:0.9rem 1rem;">
+          <div style="font-weight:600; font-size:0.9rem; margin-bottom:0.2rem;">Nature Craft</div>
+          <div style="font-size:0.75rem; color:rgba(255,255,255,0.55); margin-bottom:0.5rem;">Mallandur Road · 9AM–9PM · Wood & sandalwood</div>
+          <a href="https://www.google.com/maps/search/nature+craft+mallandur+road+chikmagalur" target="_blank" style="color:var(--mist); font-size:0.78rem; text-decoration:none;">📍 Open Map →</a>
+        </div>
+      </div>
+      <div style="margin-top:1rem; padding:0.8rem 1rem; background:rgba(201,168,76,0.15); border-radius:8px; font-size:0.82rem; color:rgba(255,255,255,0.7);">
+        💡 <strong style="color:var(--gold)">Pro Tip:</strong> Bargain politely at Market Road stalls. Buying coffee directly at your estate homestay is often the freshest and cheapest. Always check coffee roast dates — fresh roasted within 2 weeks is ideal.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUDGET -->
+<section class="budget-bg">
+  <div class="section">
+    <div class="section-label">Money matters</div>
+    <div class="section-title">Full Budget Breakdown</div>
+    <div class="section-sub" style="color:var(--fog)">Per person estimate for 2 nights, 3 days</div>
+
+    <div class="budget-table">
+      <div class="budget-row header">
+        <div>Category</div>
+        <div>Min (₹)</div>
+        <div>Max (₹)</div>
+        <div>Notes</div>
+      </div>
+      <div class="budget-row">
+        <div class="brow-item">🚌 KSRTC Bus (to + fro)</div>
+        <div class="brow-low">1,100</div>
+        <div class="brow-high">1,400</div>
+        <div class="brow-note">Both legs Volvo AC</div>
+      </div>
+      <div class="budget-row">
+        <div class="brow-item">🏡 Stay (2 nights ÷ 4)</div>
+        <div class="brow-low">1,750</div>
+        <div class="brow-high">2,400</div>
+        <div class="brow-note">₹3,500–4,800/night shared</div>
+      </div>
+      <div class="budget-row">
+        <div class="brow-item">🍽️ Food (3 days)</div>
+        <div class="brow-low">1,200</div>
+        <div class="brow-high">1,800</div>
+        <div class="brow-note">Bfast + Lunch + Dinner daily</div>
+      </div>
+      <div class="budget-row">
+        <div class="brow-item">🚗 Local Transport</div>
+        <div class="brow-low">400</div>
+        <div class="brow-high">700</div>
+        <div class="brow-note">Autos, shared cab, jeep</div>
+      </div>
+      <div class="budget-row">
+        <div class="brow-item">🏔️ Entry / Activities</div>
+        <div class="brow-low">200</div>
+        <div class="brow-high">400</div>
+        <div class="brow-note">Mullayanagiri, Hebbe jeep, estate</div>
+      </div>
+      <div class="budget-row">
+        <div class="brow-item">☕ Coffee & Misc Shopping</div>
+        <div class="brow-low">200</div>
+        <div class="brow-high">500</div>
+        <div class="brow-note">Coffee beans, spices, snacks</div>
+      </div>
+      <div class="budget-row total-row">
+        <div class="brow-item">💰 Total per Person</div>
+        <div class="brow-low">~₹4,850</div>
+        <div class="brow-high">~₹7,200</div>
+        <div class="brow-note">Depending on choices</div>
+      </div>
+    </div>
+
+    <div class="savings-box">
+      <h4>💡 Money-Saving Hacks</h4>
+      <ul>
+        <li>Eat thali meals and South Indian breakfasts — full, delicious, and 50% cheaper than cafés</li>
+        <li>Split a shared cab for Mullayanagiri instead of 4 separate autos</li>
+        <li>Book Airbnb with kitchen access and buy groceries from the local market for one meal</li>
+        <li>Book KSRTC bus directly from ksrtc.in (skip Redbus markup)</li>
+        <li>Buy coffee directly from estate shops — 40–50% cheaper than Bangalore stores</li>
+        <li>Use Google Maps offline mode before you go — saves on data in hilly areas</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <p style="font-size:1.1rem; font-family:'Fraunces',serif; color:rgba(255,255,255,0.7); margin-bottom:1rem">Have an incredible trip ☕🏔️</p>
+  <p>Planned for 4 adults · Bangalore → Chikmagalur · April 3–5, 2026</p>
+  <p style="margin-top:0.75rem">
+    <a href="https://www.airbnb.co.in/s/Chikmagalur" target="_blank">Airbnb</a> ·
+    <a href="https://www.ksrtc.in" target="_blank">KSRTC Booking</a> ·
+    <a href="https://www.google.com/maps/place/Chikmagalur" target="_blank">Chikmagalur on Maps</a>
+  </p>
+  <p style="margin-top:1rem">Made with <span class="heart">♥</span> for value-for-money travel</p>
+</footer>
+
+</body>
+</html>
